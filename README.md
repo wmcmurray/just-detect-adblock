@@ -1,5 +1,5 @@
 # just-detect-adblock
-This package is strongly ~~inspired~~copied from [BlockAdBlock](https://github.com/sitexw/BlockAdBlock). I just didn't liked how overly complicated the end user API was. I just needed a simple function to detect if an adblocker is present or not. So i made this !
+This package is strongly ~~inspired~~ copied from [BlockAdBlock](https://github.com/sitexw/BlockAdBlock) & [FuckAdBlock](https://github.com/sitexw/FuckAdBlock). I just didn't liked how overly complicated the end user API was so I made this, which contains only one function to detect if an adblocker is active or not.
 
 ## Installation
 ```
@@ -8,7 +8,7 @@ npm install just-detect-adblock --save
 
 ## API
 
-* `isDetected()` Returns true or false if an adblocker is detected.
+* `isDetected()` Returns true/false if an adblocker is detected.
 
 
 ## Exemples
