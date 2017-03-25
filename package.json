@@ -1,0 +1,26 @@
+{
+  "name": "just-detect-adblock",
+  "version": "1.0.0",
+  "description": "It's FuckAdBlock with a minimalist API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmcmurray/just-detect-adblock.git"
+  },
+  "keywords": [
+    "detect",
+    "adblock",
+    "adblocker",
+    "blockadblock",
+    "fuckadblock"
+  ],
+  "author": "William McMurray <tiwilinlove@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wmcmurray/just-detect-adblock/issues"
+  },
+  "homepage": "https://github.com/wmcmurray/just-detect-adblock#readme"
+}
