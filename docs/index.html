@@ -2,7 +2,7 @@
 <html lang="en" >
   <head>
     <meta charset="utf-8">
-    <title>just-detect-adblock test page</title>
+    <title>just-detect-adblock demo page</title>
     <meta name="viewport" content="width=device-width">
     <style media="screen">
       body {
@@ -24,7 +24,7 @@
         color: #444;
         transition: color 0.2s ease-out;
       }
-      .test-container {
+      .demo-container {
         display: flex;
         height: 100vh;
         box-sizing: border-box;
@@ -39,13 +39,13 @@
       }
     </style>
   </head>
-  <body class="test-container">
+  <body class="demo-container">
     <div>
       <h1>just-detect-adblock</h1>
       <div id="results"></div>
     </div>
 
-    <script type="text/javascript" src="/dist/bundle.umd.js"></script>
+    <script type="text/javascript" src="bundle.umd.js"></script>
     <script>
       var results = document.getElementById('results');
       var testDeprecatedToo = false;

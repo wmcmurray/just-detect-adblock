@@ -1,6 +1,7 @@
 // import resolve from '@rollup/plugin-node-resolve'
 // import commonjs from '@rollup/plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
+import copy from 'rollup-plugin-copy'
 import pkg from './package.json'
 
 export default {
@@ -30,5 +31,14 @@ export default {
     // resolve(),
     // commonjs(),
     terser(),
+    copy({
+      targets: [
+        // move the UMD build into the docs folder (so it can be used by the live demo)
+        {
+          src: pkg.browser,
+          dest: 'docs',
+        },
+      ],
+    }),
   ],
 };
