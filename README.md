@@ -15,9 +15,20 @@ npm install just-detect-adblock --save
 
 ### Webpack
 ```javascript
-import adBlocker from 'just-detect-adblock'
+import { isDetected } from 'just-detect-adblock'
 
-if(adBlocker.isDetected()){
+if(isDetected()){
   // an adblocker is detected
 }
+```
+
+### Web browser
+```html
+<script type="text/javascript" src="/dist/bundle.umd.js"></script>
+
+<script type="text/javascript">
+  if(justDetectAdblock.isDetected()) {
+    // an adblocker is detected
+  }
+</script>
 ```
