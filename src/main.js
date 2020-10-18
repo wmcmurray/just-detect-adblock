@@ -1,3 +1,5 @@
 import doesAdblockerIsDetected from './doesAdblockerIsDetected.js'
 
-export var isDetected = doesAdblockerIsDetected
+export default {
+  isDetected: doesAdblockerIsDetected,
+}

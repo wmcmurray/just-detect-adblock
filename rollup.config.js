@@ -17,6 +17,7 @@ export default {
     {
       file: pkg.main,
       format: 'cjs',
+      exports: 'default',
     },
 
     // ES module build (for bundlers)
