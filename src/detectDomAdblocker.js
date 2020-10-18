@@ -1,11 +1,10 @@
-import createBaitElement from './createBaitElement.js'
-import doesElementIsBlocked from './doesElementIsBlocked.js'
+import { createBaitElement, doesElementIsBlocked } from './helpers.js'
 
 /**
- * Check if an ad blocker is detected
+ * Detect if an ad blocker is blocking ads in the DOM itself
  * @return Boolean
  */
-export default function doesAdblockerIsDetected(){
+export default function detectDomAdblocker(){
   // that's a legacy Ad Block Plus check I suppose ?
   // I don't think this attribute is set anymore, but I am keeping it anyway
   if(window.document.body.getAttribute('abp') !== null) {

@@ -8,7 +8,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "http-server ./ --silent -o /test/index.html"
+    "test": "http-server ./ --silent -c-1 -o /test/index.html"
   },
   "files": [
     "dist"

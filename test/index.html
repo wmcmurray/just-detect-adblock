@@ -3,20 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>just-detect-adblock test page</title>
+    <meta name="viewport" content="width=device-width">
     <style media="screen">
       body {
         margin: 0px;
         background-color: #111;
-        text-align: center;
         font-family: sans-serif;
         color: #aaa;
       }
       h1 {
-        font-weight: normal;
         margin-top: -1em;
+        text-align: center;
+        font-weight: normal;
       }
       pre {
-        font-size: 40px;
+        margin: 10px;
+        white-space: normal;
+        font-size: 26px;
         line-height: 1.5em;
         color: #444;
         transition: color 0.2s ease-out;
@@ -24,31 +27,79 @@
       .test-container {
         display: flex;
         height: 100vh;
+        box-sizing: border-box;
         padding: 20px;
         align-items: center;
         justify-content: center;
+      }
+      @media (max-width: 800px) {
+        pre {
+          font-size: 13px;
+        }
       }
     </style>
   </head>
   <body class="test-container">
     <div>
       <h1>just-detect-adblock</h1>
-      <pre id="test-result">checking</pre>
+      <div id="results"></div>
     </div>
 
     <script type="text/javascript" src="/dist/bundle.umd.js"></script>
     <script>
-      var result = document.getElementById('test-result');
+      var results = document.getElementById('results');
+      var testDeprecatedToo = false;
 
-      setInterval(function() {
-        if(justDetectAdblock.isDetected()) {
-          result.innerHTML = 'AdBlocker detected';
-          result.style.color = 'green';
-        } else {
-          result.innerHTML = 'AdBlocker not detected';
-          result.style.color = 'red';
-        }
-      }, 500);
+      var methods = [
+        'detectDomAdblocker',
+        'detectBraveShields',
+        'detectOperaAdblocker',
+      ];
+
+      if(testDeprecatedToo) {
+        methods.push('isDetected');
+      }
+
+      methods.push('detectAnyAdblocker');
+
+      for(var i in methods) {
+        (function(name) {
+          var pre = document.createElement('pre');
+          var funcName = name+'()';
+          pre.innerHTML = funcName + ' > checking';
+
+          if(name === 'detectAnyAdblocker') {
+            pre.style.borderTop = '1px dashed #222'
+            pre.style.marginTop = '20px'
+            pre.style.paddingTop = '20px'
+          }
+
+          results.appendChild(pre);
+
+          setTimeout(function() {
+            var result = justDetectAdblock[name]();
+            var displayResult = function(detected, addon) {
+              var prefix = funcName + (addon && testDeprecatedToo?' ['+addon+']':'') + ' > ';
+
+              if(detected) {
+                pre.innerHTML = prefix + 'true';
+                pre.style.color = 'green';
+              } else {
+                pre.innerHTML = prefix + 'false';
+                pre.style.color = 'red';
+              }
+            };
+
+            if(result instanceof Promise) {
+              result.then(function(detected) {
+                displayResult(detected, 'Promise');
+              });
+            } else {
+              displayResult(result, name === 'isDetected'?'deprecated':'');
+            }
+          }, 500);
+        })(methods[i]);
+      }
     </script>
   </body>
 </html>
