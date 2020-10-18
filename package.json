@@ -1,6 +1,6 @@
 {
   "name": "just-detect-adblock",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "It's FuckAdBlock with a minimalist API.",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
