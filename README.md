@@ -18,7 +18,7 @@ npm install just-detect-adblock --save
 ```
 
 | Methods                       | Return                          | Description                                                        |
-| ----------------------------- | ------------------------------- | -------------------------------------------------------------------|
+| :---------------------------- | :------------------------------ | :------------------------------------------------------------------|
 | `detectAnyAdblocker()`        | *Promise(detected=true/false)*  | perform all available checks below until at least one is positive  |
 | `detectDomAdblocker()`        | *Promise(detected=true/false)*  | detect if a browser extension is hiding ads from the DOM           |
 | `detectBraveShields()`        | *Promise(detected=true/false)*  | detect if Brave browser shields seems to be activated              |
@@ -40,7 +40,7 @@ detectAnyAdblocker().then((detected) => {
 });
 ```
 
-### Web browser
+### Browser
 ```html
 <script type="text/javascript" src="/dist/bundle.umd.js"></script>
 
