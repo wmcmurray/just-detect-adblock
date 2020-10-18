@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <title>just-detect-adblock test page</title>
+    <style media="screen">
+      body {
+        margin: 0px;
+        background-color: #111;
+        text-align: center;
+        font-family: sans-serif;
+        color: #aaa;
+      }
+      h1 {
+        font-weight: normal;
+        margin-top: -1em;
+      }
+      pre {
+        font-size: 40px;
+        line-height: 1.5em;
+        color: #444;
+        transition: color 0.2s ease-out;
+      }
+      .test-container {
+        display: flex;
+        height: 100vh;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body class="test-container">
+    <div>
+      <h1>just-detect-adblock</h1>
+      <pre id="test-result">checking</pre>
+    </div>
+
+    <script type="text/javascript" src="/dist/bundle.umd.js"></script>
+    <script>
+      var result = document.getElementById('test-result');
+
+      setInterval(function() {
+        if(justDetectAdblock.isDetected()) {
+          result.innerHTML = 'AdBlocker detected';
+          result.style.color = 'green';
+        } else {
+          result.innerHTML = 'AdBlocker not detected';
+          result.style.color = 'red';
+        }
+      }, 500);
+    </script>
+  </body>
+</html>
