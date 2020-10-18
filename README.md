@@ -17,12 +17,13 @@ This package was originally ~~inspired~~ copied from [BlockAdBlock](https://gith
 npm install just-detect-adblock --save
 ```
 
-* `detectAnyAdblocker()` *Return Promise(detected = true/false)*, performs all available checks below until at least one is positive
-* `detectDomAdblocker()` *Return Promise(detected = true/false)*, detect if a browser extension is hiding ads from the DOM
-* `detectBraveShields()` *Return Promise(detected = true/false)*, detect if Brave browser shields seems to be activated
-* `detectOperaAdblocker()` *Return Promise(detected = true/false)*, detect if Opera browser adblocker seems to be activated
-* **Deprecated :**
-* `isDetected()` *Return true/false*, if an adblocker is detected **(old behavior only, this method does not detect Brave or Opera adblockers, please use `detectAnyAdblocker` instead)**.
+| Methods                       | Return                          | Description                                                        |
+| ----------------------------- | ------------------------------- | -------------------------------------------------------------------|
+| `detectAnyAdblocker()`        | *Promise(detected=true/false)*  | perform all available checks below until at least one is positive  |
+| `detectDomAdblocker()`        | *Promise(detected=true/false)*  | detect if a browser extension is hiding ads from the DOM           |
+| `detectBraveShields()`        | *Promise(detected=true/false)*  | detect if Brave browser shields seems to be activated              |
+| `detectOperaAdblocker()`      | *Promise(detected=true/false)*  | detect if Opera browser adblocker seems to be activated            |
+| **DEPRECATED** `isDetected()` | *true/false*                    | if an adblocker is detected **(old behavior only, this method does not detect Brave or Opera adblockers, please use `detectAnyAdblocker` instead)** |
 
 <br>
 
