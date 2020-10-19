@@ -27,7 +27,7 @@ npm install just-detect-adblock --save
 
 <br>
 
-## Exemples
+## Exemples ([live demo :eyes:](https://wmcmurray.github.io/just-detect-adblock/))
 
 ### Webpack
 ```javascript
