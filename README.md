@@ -1,4 +1,7 @@
 # just-detect-adblock :no_entry_sign::detective:
+
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/wmcmurray/just-detect-adblock.svg?logo=lgtm&logoWidth=18&label=JS%20code%20quality)](https://lgtm.com/projects/g/wmcmurray/just-detect-adblock/context:javascript)
+
 This package was originally ~~inspired~~ copied from [BlockAdBlock](https://github.com/sitexw/BlockAdBlock) & [FuckAdBlock](https://github.com/sitexw/FuckAdBlock), then I added features that those don't have. I just didn't like how overly complicated their API was, so I made this, which contains only helper functions that can be called manually. The rest is up to you !
 
 
